@@ -1,0 +1,9 @@
+POST http://localhost:3001/users/create
+Content-Type : application/json
+
+{
+    "firstName": "Bhavya",
+    "lastName": "Surati",
+    "email": "bhavya@surati.com",
+    "password": "Bhavya@@2"
+}

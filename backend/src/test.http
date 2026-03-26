@@ -1,0 +1,13 @@
+GET http://localhost:3001/users/admin/active
+GET http://localhost:3001/users/admin/?order=asc&limit=10&page=2
+
+GET http://localhost:3001/some.text/
+GET http://localhost:3001/post
+GET http://localhost:3001/posts
+GET http://localhost:3001/tag
+GET http://localhost:3001/taggsss
+GET http://localhost:3001/error/402
+GET http://localhost:3001/dragonfly
+GET http://localhost:3001/flybird
+GET http://localhost:3001/dragonflybird
+
