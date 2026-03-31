@@ -35,7 +35,7 @@ function LoginRedirect(){
 
 export default function Signup(){
 
-    const {mutate, isPending, isError, isSuccess} = useSignup();
+    const {mutate, isPending, isError, isSuccess, error} = useSignup();
     const {toast} = useToast();
 
     const form = useForm({
@@ -62,11 +62,12 @@ export default function Signup(){
         if(isError){
             toast({
                 title: "Your request failed",
-                description: "Possibly the user already exists",
+                // description: "Possibly the user already exists",
+                description: error?.response?.data?.message || "An error occurred. Please try again.",
                 variant: "destructive",
             });
         }
-    }, [isError]); 
+    }, [isError, error]); 
 
     
     return (
