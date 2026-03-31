@@ -11,6 +11,11 @@ async function loginProvider(req,res){
     try{
         //get user
         const user = await getUserByEmail(validatedData.email);
+        if(!user){  // ✅ Check if user exists
+            return res.status(StatusCodes.BAD_REQUEST).json({
+                message: "Please check your credentials"
+            });
+        }
 
         //compare hash
         const result = await bcrypt.compare(validatedData.password, user.password);
