@@ -21,7 +21,6 @@ async function getTasksProvider(req,res){
 
         const tasks = await Task.find({
             status: { $in: ["todo","inProgress"] },
-            user: req.user.sub,
         })
             .limit(limit)
             .skip(currentPage-1) // skip means skipping a number of pages, it starts with 0.

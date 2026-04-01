@@ -5,7 +5,7 @@ async function getUserByEmail(email){
         user = await User.findOne({email: email});
         return user;
     }catch(error){
-        return null;
+        return error;
     }
 }
 

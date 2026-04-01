@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-function generateTokenProvider(user){
+function generateTokenProvider(){
     const payload={
         sub: user["_id"],
         email: user.email,
