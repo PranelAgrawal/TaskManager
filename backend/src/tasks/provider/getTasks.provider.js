@@ -23,7 +23,7 @@ async function getTasksProvider(req,res){
             status: { $in: ["todo","inProgress"] },
         })
             .limit(limit)
-            .skip(currentPage-1) // skip means skipping a number of pages, it starts with 0.
+            .skip((currentPage-1)*limit) // skip means skipping a number of pages, it starts with 0.
             .sort({
                 createdAt: order==="asc" ? 1:-1,
             });
